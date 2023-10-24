@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Button from './components/Button';
 
-type Partner = {
+type PartnerData = {
   availableDates: string[];
   country: string;
   email: string;
@@ -10,8 +10,19 @@ type Partner = {
   lastName: string;
 };
 
-type PartnersData = {
-  partners: Partner[];
+export type PartnersData = {
+  partners: PartnerData[];
+};
+
+export type CountryData = {
+  attendeeCount: number;
+  attendees: string[];
+  name: string;
+  startDate?: Date;
+};
+
+export type CountriesData = {
+  countries: CountryData[];
 };
 
 export default function Home() {

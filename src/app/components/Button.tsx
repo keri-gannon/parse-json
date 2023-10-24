@@ -1,4 +1,5 @@
 import React from 'react';
+import { groupPartnersByCountry } from '../utils';
 
 type ButtonProps = {
   isGet?: boolean;
@@ -24,6 +25,8 @@ export default function Button({ isGet }: ButtonProps) {
 
       const data = await response.json();
       console.log(data, 'data');
+      const countriesData = groupPartnersByCountry(data);
+      console.log(countriesData, 'countriesData');
     } catch (error) {
       if (error instanceof Error) {
         console.error(`Error: ${error.message}`);
