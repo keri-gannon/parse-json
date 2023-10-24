@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
-import Button from './components/Button';
+import GetButton from './components/Buttons/GetButton';
+import PostButton from './components/Buttons/PostButton';
 
 type PartnerData = {
   availableDates: string[];
@@ -26,14 +27,16 @@ export type CountriesData = {
 };
 
 export default function Home() {
-  const [parterData, setPartnerData] = useState<PartnersData>({ partners: [] });
+  const [partersData, setPartnersData] = useState<PartnersData>({
+    partners: [],
+  });
 
   return (
     <>
-      <Button isGet />
+      <GetButton setPartnersData={setPartnersData} />
       <br />
       <br />
-      <Button />
+      <PostButton partnersData={partersData} />
     </>
   );
 }

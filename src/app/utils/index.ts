@@ -1,6 +1,8 @@
 import { CountriesData, PartnersData } from '../page';
 
-export const groupPartnersByCountry = (partnersData: PartnersData) => {
+export const groupPartnersByCountry = (
+  partnersData: PartnersData
+): CountriesData => {
   const countriesData: CountriesData = { countries: [] };
 
   partnersData.partners.forEach((partner) => {
@@ -20,6 +22,8 @@ export const groupPartnersByCountry = (partnersData: PartnersData) => {
   });
   return countriesData;
 };
+
+const findFirstAvailableDate = (partnersData: PartnersData) => {};
 
 // Iterate through partners, and group them by country
 // If there are no two days in a row when any partners can make it, return startDate: null, attendees: [], attendeeCount: 0
