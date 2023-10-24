@@ -1,5 +1,4 @@
 import { PartnersData } from '@/app/page';
-import { groupPartnersByCountry } from '@/app/utils';
 import React from 'react';
 
 type ButtonProps = {
@@ -25,10 +24,7 @@ export default function GetButton({ setPartnersData }: ButtonProps) {
       }
 
       const data = await response.json();
-      console.log(data, 'data');
       setPartnersData(data);
-      const countriesData = groupPartnersByCountry(data);
-      console.log(countriesData, 'countriesData');
     } catch (error) {
       if (error instanceof Error) {
         console.error(`Error: ${error.message}`);

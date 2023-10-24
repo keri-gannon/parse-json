@@ -19,7 +19,7 @@ export type CountryData = {
   attendeeCount: number;
   attendees: string[];
   name: string;
-  startDate?: Date;
+  startDate: string | null;
 };
 
 export type CountriesData = {
